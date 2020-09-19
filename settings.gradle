@@ -1,2 +1,6 @@
+include ':college-app-util'
+include ':college-app-sdk-package'
+include ':college-app-sdk-impl'
+include ':college-app-sdk'
 include ':app'
 rootProject.name = "CollegeApp"
