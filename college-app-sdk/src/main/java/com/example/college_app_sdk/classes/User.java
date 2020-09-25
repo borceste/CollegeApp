@@ -1,27 +1,53 @@
 package com.example.college_app_sdk.classes;
 
+import java.io.Serializable;
+
 /**
  * This is model class for the user.
  */
-public class User {
-        private String name;
-        private String surname;
-        private String username;
-        private String password;
-        private String email;
-        private String index;
-        private String faculty;
-        private int yearsOfService;
-        private int score;
+public class User implements Serializable {
+    private String username;
+    private String email;
+    private int yearsOfService;
+    private int score;
 
-        public User(String name, String surname, String username, String email, String index, String faculty){
-                this.name = name;
-                this.surname = surname;
-                this.username = username;
-                this.email = email;
-                this.index = index;
-                this.faculty = faculty;
-                yearsOfService = 0;
-                score = 0;
-        }
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int getYearsOfService() {
+        return yearsOfService;
+    }
+
+    public void setYearsOfService(int yearsOfService) {
+        this.yearsOfService = yearsOfService;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
+
+    public User(String username, String email, int yearsOfService, int score) {
+        this.username = username;
+        this.email = email;
+        this.yearsOfService = yearsOfService;
+        this.score = score;
+    }
+
 }
