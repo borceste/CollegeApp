@@ -16,6 +16,7 @@ import android.widget.Button;
 import com.example.college_app_sdk.classes.IntroViewPagerItem;
 import com.example.collegeapp.HomeActivity;
 import com.example.collegeapp.R;
+import com.example.collegeapp.SignUpActivity;
 import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
@@ -161,7 +162,7 @@ public class IntroActivity extends AppCompatActivity {
 
     private void openRegisterScreen() {
         //TODO: set intent for RegisterAcitivity
-        Intent exampleIntent = new Intent(getApplicationContext(), HomeActivity.class);
+        Intent exampleIntent = new Intent(getApplicationContext(), SignUpActivity.class);
         startActivity(exampleIntent);
     }
 
