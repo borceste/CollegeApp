@@ -5,9 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".HomeActivity">
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Home Screen"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="Home Screen" />
 </androidx.constraintlayout.widget.ConstraintLayout>

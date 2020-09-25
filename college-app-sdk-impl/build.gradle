@@ -2,6 +2,8 @@ apply plugin: 'java-library'
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(path: ':college-app-sdk')
+    implementation 'androidx.appcompat:appcompat:1.2.0'
 }
 
 sourceCompatibility = "1.7"
