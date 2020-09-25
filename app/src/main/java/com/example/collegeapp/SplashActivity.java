@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import com.example.collegeapp.intro_activity.IntroActivity;
+
 public class SplashActivity extends AppCompatActivity {
 
     @Override
@@ -20,7 +22,7 @@ public class SplashActivity extends AppCompatActivity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent homeIntent = new Intent(SplashActivity.this, HomeActivity.class);
+                Intent homeIntent = new Intent(SplashActivity.this, IntroActivity.class);
                 startActivity(homeIntent);
                 finish();
             }
