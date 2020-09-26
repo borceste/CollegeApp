@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity implements Validator.Valida
                 if (task.isSuccessful()) {
                     // GO TO HOME ACTIVITY
                     // CLEAR ACTIVITY STACK
-                    Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
+                    Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {

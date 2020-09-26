@@ -124,7 +124,7 @@ public class SignUpActivity extends AppCompatActivity implements Validator.Valid
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
                                         Toast.makeText(SignUpActivity.this, getString(R.string.registration_successful), Toast.LENGTH_SHORT).show();
-                                        Intent intent = new Intent(SignUpActivity.this, HomeActivity.class);
+                                        Intent intent = new Intent(SignUpActivity.this, MainActivity.class);
                                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                         startActivity(intent);
                                     } else {
