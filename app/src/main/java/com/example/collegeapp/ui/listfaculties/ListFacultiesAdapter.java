@@ -62,6 +62,10 @@ public class ListFacultiesAdapter extends RecyclerView.Adapter<ListFacultiesAdap
         return faculties.size();
     }
 
+    public Faculty getFaculty(int position){
+        return faculties.get(position);
+    }
+
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private TextView facultyName;
