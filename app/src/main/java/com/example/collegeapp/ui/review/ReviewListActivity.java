@@ -9,12 +9,15 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.collegeapp.R;
+import com.example.collegeapp.ui.list_subjects.ListSubjectsActivity;
+import com.example.collegeapp.ui.listfaculties.ListFacultiesFragment;
 
 public class ReviewListActivity extends AppCompatActivity {
 
     private ListReviewsAdapter listReviewsAdapter;
     private RecyclerView recyclerView;
     private RecyclerView.LayoutManager layoutManager;
+    private String subjectId;
 
 
     @Override
@@ -30,9 +33,20 @@ public class ReviewListActivity extends AppCompatActivity {
         intent.getExtras();
 
         //TODO
-        String subjectId = "";
+        getId();
 
         listReviewsAdapter = new ListReviewsAdapter(this, subjectId);
         recyclerView.setAdapter(listReviewsAdapter);
+    }
+
+    private void getId() {
+        Intent incomingIntent = getIntent();
+        if (incomingIntent != null) {
+            if (incomingIntent.hasExtra(ListSubjectsActivity.EXTRA_SUBJECT_ID)) {
+                subjectId = String.valueOf(incomingIntent.getStringExtra(ListSubjectsActivity.EXTRA_SUBJECT_ID));
+
+            }
+
+        }
     }
 }

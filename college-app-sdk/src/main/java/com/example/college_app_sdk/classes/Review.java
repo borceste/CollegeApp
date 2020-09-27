@@ -11,21 +11,6 @@ public class Review {
     private String title;
     private String subjectId;
 
-    public String getSubjectId() {
-        return subjectId;
-    }
-
-    public void setSubjectId(String subjectId) {
-        this.subjectId = subjectId;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
 
     public Review(){
         this.content = "";
@@ -33,8 +18,18 @@ public class Review {
         this.numberOfLikes = 0;
         this.publisher = "";
         this.title = "";
+        this.subjectId = "";
     }
 
+    public Review(String content, int numberOfDislikes, int numberOfLikes, String publisher, String subjectId, String title) {
+        this.subjectId = subjectId;
+        this.content = content;
+        this.publisher = publisher;
+        this.numberOfDislikes = numberOfDislikes ;
+        this.numberOfLikes = numberOfLikes;
+        this.title = title;
+
+    }
     public String getContent() {
         return content;
     }
@@ -67,12 +62,21 @@ public class Review {
         this.publisher = publisher;
     }
 
-    public Review(String content, String publisher, int numberOfDislikes, int numberOfLikes, String subjectId) {
-        this.subjectId = subjectId;
-        this.content = content;
-        this.publisher = publisher;
-        this.numberOfDislikes = numberOfDislikes ;
-        this.numberOfLikes = numberOfLikes;
-
+    public String getSubjectId() {
+        return subjectId;
     }
+
+    public void setSubjectId(String subjectId) {
+        this.subjectId = subjectId;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+
 }

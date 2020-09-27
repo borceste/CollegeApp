@@ -30,7 +30,7 @@ public class ListReviewsAdapter extends RecyclerView.Adapter<ListReviewsAdapter.
     public ListReviewsAdapter(Context context, String subjectId) {
         this.context = context;
         this.subjectId = subjectId;
-        databaseReference = FirebaseDatabase.getInstance().getReference("replies");
+        databaseReference = FirebaseDatabase.getInstance().getReference("reviews");
         databaseReference.addChildEventListener(new ReviewChildEventListener());
         this.reviews = new ArrayList<>();
 
