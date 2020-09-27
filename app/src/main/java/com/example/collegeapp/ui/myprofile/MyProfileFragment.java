@@ -12,24 +12,55 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
 
+import com.example.college_app_sdk.classes.User;
 import com.example.collegeapp.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import org.w3c.dom.Text;
 
 public class MyProfileFragment extends Fragment {
-    private MyProfileViewModel myProfileViewModel;
+
+    private FirebaseAuth firebaseAuth;
+
+    private TextView mYearsOfService;
+    private TextView mScore;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        myProfileViewModel =
-                ViewModelProviders.of(this).get(MyProfileViewModel.class);
+
         View root = inflater.inflate(R.layout.fragment_myprofile, container, false);
-        final TextView textView = root.findViewById(R.id.text_myprofile);
-        myProfileViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        mYearsOfService = root.findViewById(R.id.text_myprofile_yearsofservice);
+        mScore = root.findViewById(R.id.text_myprofile_score);
+        getData();
         return root;
+    }
+
+
+    private void getData() {
+        if(firebaseAuth.getCurrentUser() != null){
+            String userId = firebaseAuth.getCurrentUser().getUid();
+            DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference("users");
+            databaseReference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    User user = snapshot.getValue(User.class);
+                    mScore.setText("Score: " + user.getScore());
+                    mYearsOfService.setText("Years of service: " + user.getYearsOfService());
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
     }
 
 }
