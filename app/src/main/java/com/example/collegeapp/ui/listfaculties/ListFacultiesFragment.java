@@ -11,6 +11,8 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.collegeapp.R;
 import com.example.collegeapp.ui.home.HomeViewModel;
@@ -18,19 +20,44 @@ import com.example.collegeapp.ui.home.HomeViewModel;
 public class ListFacultiesFragment extends Fragment {
 
     private ListFacultiesViewModel listFacultiesViewModel;
+    private ListFacultiesAdapter listFacultiesAdapter;
+    private RecyclerView recyclerView;
+    private RecyclerView.LayoutManager layoutManager;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        listFacultiesViewModel =
-                ViewModelProviders.of(this).get(ListFacultiesViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        listFacultiesViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
-        return root;
+
+        View view = inflater.inflate(R.layout.fragment_listfaculties, container, false);
+        /*recyclerView = root.findViewById(R.id.recycle_view_faculty);
+        //recyclerView = container.getRootView().findViewById(R.id.recycle_view_faculty);
+        recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
+        recyclerView.setHasFixedSize(true);
+        listFacultiesAdapter = new ListFacultiesAdapter(getActivity());
+        recyclerView.setAdapter(listFacultiesAdapter);*/
+
+        recyclerView = view.findViewById(R.id.recycle_view_faculty);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+        listFacultiesAdapter = new ListFacultiesAdapter(getActivity());
+
+        recyclerView.setAdapter(listFacultiesAdapter);
+
+        return view;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
     }
 }

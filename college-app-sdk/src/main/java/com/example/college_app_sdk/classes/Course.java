@@ -1,6 +1,6 @@
 package com.example.college_app_sdk.classes;
 
-public class Course {
+public class  Course {
     private int id;
     private String name;
     private String description;
