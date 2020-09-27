@@ -55,8 +55,6 @@ public class ListFacultiesAdapter extends RecyclerView.Adapter<ListFacultiesAdap
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Faculty faculty = faculties.get(position);
         holder.facultyName.setText(faculty.getName());
-        Log.i("fax name: ", faculty.getName());
-
     }
 
     @Override
