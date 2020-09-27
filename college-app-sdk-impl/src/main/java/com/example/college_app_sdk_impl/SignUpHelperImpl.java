@@ -7,7 +7,7 @@ public class SignUpHelperImpl implements SignUpHelper {
 
     @Override
     public User registerNewUser(String username, String email, int yearsOfService, int score) {
-        return new User(username, email, yearsOfService, score);
+        return new User(email, score, username, yearsOfService);
     }
 
 }

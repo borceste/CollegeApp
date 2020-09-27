@@ -11,6 +11,21 @@ public class User implements Serializable {
     private int yearsOfService;
     private int score;
 
+
+    public User(){
+        this.email = "";
+        this.username = "";
+        this.score = 0;
+        this.yearsOfService = 0;
+    }
+
+    public User(String email, int score, String username, int yearsOfService) {
+        this.username = username;
+        this.email = email;
+        this.yearsOfService = yearsOfService;
+        this.score = score;
+    }
+
     public String getUsername() {
         return username;
     }
@@ -40,13 +55,6 @@ public class User implements Serializable {
     }
 
     public void setScore(int score) {
-        this.score = score;
-    }
-
-    public User(String username, String email, int yearsOfService, int score) {
-        this.username = username;
-        this.email = email;
-        this.yearsOfService = yearsOfService;
         this.score = score;
     }
 
