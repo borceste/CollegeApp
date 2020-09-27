@@ -15,7 +15,6 @@ public class Faculty {
         this.city = "";
     }
 
-
     public Faculty(String city, String description, String name) {
         this.name = name;
         this.description = description;

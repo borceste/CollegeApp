@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -17,7 +18,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.collegeapp.R;
 import com.example.collegeapp.ui.home.HomeViewModel;
 
-public class ListFacultiesFragment extends Fragment {
+public class ListFacultiesFragment extends Fragment implements ListFacultiesAdapter.OnFacultyListener{
 
     private ListFacultiesViewModel listFacultiesViewModel;
     private ListFacultiesAdapter listFacultiesAdapter;
@@ -40,7 +41,7 @@ public class ListFacultiesFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
 
-        listFacultiesAdapter = new ListFacultiesAdapter(getActivity());
+        listFacultiesAdapter = new ListFacultiesAdapter(getActivity(), this);
 
         recyclerView.setAdapter(listFacultiesAdapter);
 
@@ -59,5 +60,11 @@ public class ListFacultiesFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
+    }
+
+    @Override
+    public void onFacultyClick(int position) {
+        String text = "Clicked: " + position;
+        Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
     }
 }

@@ -31,10 +31,12 @@ public class ListFacultiesAdapter extends RecyclerView.Adapter<ListFacultiesAdap
     //private Callback callback;
     //private static final String PATH = "https://collegeappfirebase.firebaseio.com/faculty";
     private DatabaseReference databaseReference;
+    private OnFacultyListener onFacultyListener;
 
-    public ListFacultiesAdapter(Context context){
+    public ListFacultiesAdapter(Context context, OnFacultyListener onFacultyListener){
         this.context = context;
         this.faculties = new ArrayList<>();
+        this.onFacultyListener = onFacultyListener;
         databaseReference = FirebaseDatabase.getInstance().getReference("faculty");
         Log.i("database: ",databaseReference.toString());
         //databaseReference = new FirebaseDatabase("https://collegeappfirebase.firebaseio.com/faculty");
@@ -42,20 +44,11 @@ public class ListFacultiesAdapter extends RecyclerView.Adapter<ListFacultiesAdap
     }
 
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
-        private TextView facultyName;
-
-        public ViewHolder(@NonNull View itemView) {
-            super(itemView);
-            facultyName = (TextView) itemView.findViewById(R.id.faculty_name);
-        }
-    }
-
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.faculty_listitem, parent, false);
-        return new ViewHolder(view);
+        return new ViewHolder(view, onFacultyListener);
     }
 
     @Override
@@ -69,6 +62,28 @@ public class ListFacultiesAdapter extends RecyclerView.Adapter<ListFacultiesAdap
     @Override
     public int getItemCount() {
         return faculties.size();
+    }
+
+
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private TextView facultyName;
+        private  OnFacultyListener onFacultyListener;
+
+        public ViewHolder(@NonNull View itemView, OnFacultyListener onFacultyListener) {
+            super(itemView);
+            facultyName = (TextView) itemView.findViewById(R.id.faculty_name);
+            this.onFacultyListener = onFacultyListener;
+            itemView.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            onFacultyListener.onFacultyClick(getAdapterPosition());
+        }
+    }
+
+    public interface OnFacultyListener{
+        void onFacultyClick(int position);
     }
 
     private class FacultyChildEventListener implements ChildEventListener {
