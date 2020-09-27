@@ -3,7 +3,8 @@ package com.example.college_app_sdk.classes;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Faculty {
+
+public class Faculty{
     private String name;
     private String description;
     private String city;

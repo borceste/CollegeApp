@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.listfaculties.ListFacultiesFragment">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycle_view_faculty"
         android:layout_width="match_parent"

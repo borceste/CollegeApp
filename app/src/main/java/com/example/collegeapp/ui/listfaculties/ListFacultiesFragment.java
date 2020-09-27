@@ -1,5 +1,6 @@
 package com.example.collegeapp.ui.listfaculties;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,15 +16,20 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.college_app_sdk.classes.Faculty;
 import com.example.collegeapp.R;
 import com.example.collegeapp.ui.home.HomeViewModel;
+import com.example.collegeapp.ui.list_subjects.ListSubjectsActivity;
 
 public class ListFacultiesFragment extends Fragment implements ListFacultiesAdapter.OnFacultyListener{
 
-    private ListFacultiesViewModel listFacultiesViewModel;
+    public static String EXTRA_FACULTY_NAME = "faculty_name";
+    public static String EXTRA_FACULTY_DESCRIPTION = "faculty_description";
+    public static String EXTRA_FACULTY_CITY = "faculty_city";
+
+
     private ListFacultiesAdapter listFacultiesAdapter;
     private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
 
 
     public View onCreateView(@NonNull LayoutInflater inflater,
@@ -64,7 +70,11 @@ public class ListFacultiesFragment extends Fragment implements ListFacultiesAdap
 
     @Override
     public void onFacultyClick(int position) {
-        String text = "Clicked: " + position;
-        Toast.makeText(getContext(), text, Toast.LENGTH_SHORT).show();
+        Faculty selectedFaculty = listFacultiesAdapter.getFaculty(position);
+        Intent subjectIntent = new Intent(getActivity(), ListSubjectsActivity.class);
+        subjectIntent.putExtra(EXTRA_FACULTY_NAME, selectedFaculty.getName());
+        subjectIntent.putExtra(EXTRA_FACULTY_CITY, selectedFaculty.getCity());
+        subjectIntent.putExtra(EXTRA_FACULTY_DESCRIPTION, selectedFaculty.getDescription());
+        startActivity(subjectIntent);
     }
 }
