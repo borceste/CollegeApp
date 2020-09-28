@@ -98,7 +98,7 @@
                 android:id="@+id/button_sign_up"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="100dp"
+                android:layout_marginTop="80dp"
                 android:background="@color/black"
                 android:text="@string/signup"
                 android:textColor="@color/white" />
@@ -108,7 +108,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="15dp"
                 android:background="@color/colorPrimary"
                 android:text="@string/already_have_account" />
         </LinearLayout>

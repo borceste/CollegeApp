@@ -36,16 +36,11 @@ public class ListFacultiesFragment extends Fragment implements ListFacultiesAdap
                              ViewGroup container, Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_listfaculties, container, false);
-        /*recyclerView = root.findViewById(R.id.recycle_view_faculty);
-        //recyclerView = container.getRootView().findViewById(R.id.recycle_view_faculty);
-        recyclerView.setLayoutManager(new LinearLayoutManager(root.getContext()));
-        recyclerView.setHasFixedSize(true);
-        listFacultiesAdapter = new ListFacultiesAdapter(getActivity());
-        recyclerView.setAdapter(listFacultiesAdapter);*/
 
         recyclerView = view.findViewById(R.id.recycle_view_faculty);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
 
         listFacultiesAdapter = new ListFacultiesAdapter(getActivity(), this);
 

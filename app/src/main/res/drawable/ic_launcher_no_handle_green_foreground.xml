@@ -1,0 +1,52 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+  <group android:scaleX="0.052750412"
+      android:scaleY="0.052750412"
+      android:translateX="30.314537"
+      android:translateY="25.38">
+    <path
+        android:pathData="M615.71,266C760.45,333.77 860.71,480.73 860.71,651.11a425,425 0,0 1,-425 425c-234.72,0 -425,-190.28 -425,-425 0,-171.16 101.18,-318.69 247,-386"
+        android:strokeWidth="18"
+        android:fillColor="#00000000"
+        android:strokeColor="#662d91"/>
+    <path
+        android:pathData="M860.71,76.62 L614.71,160.33 615.71,265.11c-54.66,-15.27 -115.66,-23.8 -180,-23.8 -63.56,0 -123.86,8.32 -178,23.25l-1,-107.54L34.71,71.85 435.71,9.11l390.57,62Z"
+        android:strokeWidth="18"
+        android:fillColor="#662d91"
+        android:strokeColor="#662d91"/>
+    <path
+        android:pathData="M722.96,964.33"
+        android:strokeWidth="18"
+        android:fillColor="#fff"
+        android:strokeColor="#662d91"/>
+    <path
+        android:pathData="M670.71,999.11"
+        android:strokeWidth="18"
+        android:fillColor="#fff"
+        android:strokeColor="#662d91"/>
+    <path
+        android:pathData="M198.71,509.11L672.71,509.11"
+        android:strokeWidth="25"
+        android:fillColor="#662d91"
+        android:strokeColor="#662d91"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M198.71,666.11L672.71,666.11"
+        android:strokeWidth="25"
+        android:fillColor="#662d91"
+        android:strokeColor="#662d91"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M198.71,816.11L672.71,816.11"
+        android:strokeWidth="25"
+        android:fillColor="#662d91"
+        android:strokeColor="#662d91"
+        android:strokeLineCap="round"/>
+    <path
+        android:pathData="M829.71,380.11l20,-308l20,308l-40,0z"
+        android:fillColor="#662d91"/>
+  </group>
+</vector>

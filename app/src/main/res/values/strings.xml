@@ -37,4 +37,7 @@
     <string name="enter_title">Enter title</string>
     <string name="enter_content">Write text...</string>
     <string name="confirm">Confirm</string>
+    <string name="write_review">Write review</string>
+    <string name="channel_name">New review</string>
+    <string name="channel_description">New review description</string>
 </resources>

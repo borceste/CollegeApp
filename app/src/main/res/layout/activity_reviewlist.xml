@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.review.ReviewListActivity"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@color/white"
     android:padding="30dp">
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
+
+        <Button
+            android:id="@+id/write_review_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/write_review"
+            android:textColor="@color/design_default_color_primary"/>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycle_view_reply"
@@ -23,10 +30,13 @@
             tools:ignore="MissingConstraints" />
 
         <LinearLayout
+            android:id="@+id/write_review_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintBottom_toBottomOf="parent">
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginTop="16dp"
+            android:visibility="gone">
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/enter_title_layout"
@@ -66,9 +76,9 @@
                     android:id="@+id/enter_content_text"
                     android:layout_width="match_parent"
                     android:layout_height="119dp"
-                    android:inputType="textPassword"
                     android:textColor="@color/black"
-                    android:textCursorDrawable="@color/black" />
+                    android:textCursorDrawable="@color/black"
+                    />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -92,8 +102,8 @@
                 android:textColor="@color/white"/>
         </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
+    </LinearLayout>
 
-</LinearLayout>
+</ScrollView>
