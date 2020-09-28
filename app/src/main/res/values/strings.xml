@@ -34,4 +34,7 @@
     <string name="old_password">Enter old password</string>
     <string name="new_password">Enter new password</string>
     <string name="cancel">Cancel</string>
+    <string name="enter_title">Enter title</string>
+    <string name="enter_content">Write text...</string>
+    <string name="confirm">Confirm</string>
 </resources>
